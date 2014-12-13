@@ -1,4 +1,5 @@
 <?php 
+
     require_once 'etc/config/website.settings.php';
     require_once 'etc/modules/user/user.lib.php';
     $user = new User();

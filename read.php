@@ -1,4 +1,8 @@
+
+
 <?php 
+ session_start();
+ 
     $messageid = $_REQUEST['id'];
     $messagesender = $_REQUEST['sender'];
     $flag = $_REQUEST['flag'];

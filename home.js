@@ -1,9 +1,9 @@
-function compose_message(){
-	document.write("compose_message");
+window.onload function(){
+	document.getElementById("Compose").onclick= compose_message;
 }
 
 
-function compose_mess(){
+function compose_message(){
 	console.log("The on click works");
 	var compose_panel=[
 		'<div id ="compose_window">',

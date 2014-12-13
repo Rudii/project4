@@ -5,9 +5,9 @@ session_start();
     $body = $_POST['body'];
 
 
-    $con = mysql_connect("0.0.0.0","rudii","","data");
+    $con = mysqli_connect("0.0.0.0","rudii","","data");
     if(!$con){
-        die("Connection failed: " . mysql_error());
+        die("Connection failed: " . mysqli_error());
     }
     else {
         echo "Connection was successful!";
@@ -18,20 +18,20 @@ session_start();
             $uid = "SELECT id FROM User WHERE username = '$_SESSION [username]' ";
             $recid = "SELECT id FROM User WHERE username = '$recipient'";
             
-            $uidres = mysql_query($conn, $uid);
-            $recidres = mysql_query($conn, $recid);
+            $uidres = mysqli_query($conn, $uid);
+            $recidres = mysqli_query($conn, $recid);
             
             //check to see if there is a recipient 
             
-            if(mysql_fetch_array($recid)==0){
+            if(mysqli_fetch_array($recid)==0){
                 echo "Please enter a valid username";
             }
                 else
                 {
                    $temp = "INSERT INTO Message (body, subject, recipient_id) VALUES ($body, $subject, $recidres)" ; 
                    
-                   if(mysql_query($con, $temp)){
-                       die("Please try again. The message was not inserted:" . mysql_error($con));
+                   if(mysqli_query($con, $temp)){
+                       die("Please try again. The message was not inserted:" . mysqli_error($con));
                    }
                    
                     else{
@@ -46,7 +46,7 @@ session_start();
                 
                 
                 {
-                    mysql_close($conn);
+                    mysqli_close($conn);
                     
                 }
             
