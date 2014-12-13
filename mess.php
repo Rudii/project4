@@ -5,7 +5,7 @@ session_start();
     $body = $_POST['body'];
 
 
-    $con = mysql_connect("127.1.1.1","rudii","");
+    $con = mysql_connect("0.0.0.0","rudii","","data");
     if(!$con){
         die("Connection failed: " . mysql_error());
     }
@@ -35,7 +35,7 @@ session_start();
                    }
                    
                     else{
-                        echo "Message was successful inserted";
+                        echo "Message was successfully inserted";
                     }
                    }
                 
